@@ -1,0 +1,15 @@
+.adaptiveValue(@property, @startValue, @endValue, @minWidth, @maxWidth) {
+    @slope: (@endValue - @startValue) / (@maxWidth - @minWidth);
+    @yIntercept: @startValue - (@slope * @minWidth);
+
+    @propertyValue: ~"clamp(@{startValue}px, @{yIntercept}px + @{slope} * 100vw, @{endValue}px)";
+
+    @supports (@{property}: @propertyValue) {
+        @{property}: @propertyValue;
+    }
+
+    @supports not (@{property}: @propertyValue) {
+        @calcValue: ~"calc(@{startValue}px + (@{endValue - @startValue}) * ((100vw - @{minWidth}px) / (@{maxWidth - @minWidth})))";
+        @{property}: @calcValue;
+    }
+}
