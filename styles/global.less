@@ -1,9 +1,7 @@
+@import 'mixins';
 @mobile: 320px;
 @tablet: 768px;
 @desktop: 950px;
-
-// @gt-mobile: ~'(min-width: @{min-tablet})';
-// @gt-tablet: ~'(min-width: @{min-desktop})';
 
 .wrapper {
 	min-height: 100%;
@@ -21,7 +19,14 @@
 }
 
 [class*="__container"]{
-    max-width: 1190px;
-    padding: 0px 15px;
+    max-width: 950px;
     margin: 0 auto;
+	.adaptiveValue(padding-left, 15, 35, 320, 768);
+    .adaptiveValue(padding-right, 15, 35, 320, 768);
+	
+	@media (min-width: @tablet){
+		.adaptiveValue(padding-left, 35, 10, 768, 950);
+		.adaptiveValue(padding-right, 35, 10, 768, 950);
+	}
+
 }

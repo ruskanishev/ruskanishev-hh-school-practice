@@ -1,15 +1,16 @@
+// .adaptiveValue(@property, @startValue, @endValue, @minWidth, @maxWidth) {
+//     @{property}: ~"calc(@{startValue}px + (@{endValue} - @{startValue}) * ((100vw - @{minWidth}px) / (@{maxWidth} - @{minWidth})))";
+// }
+
+// Выше рабочий вариант, но с проблемой граничных значений. Эту проблему можно увидеть по растягиваюнию высоты header при увеличении ширины экрана.
+.adaptiveValue(@property, @startValue, @endValue, @minWidth, @maxWidth) when (@minWidth > 100vw) {
+    @{property}: @startValue;
+}
+
+.adaptiveValue(@property, @startValue, @endValue, @minWidth, @maxWidth) when (@maxWidth < 100vw) {
+    @{property}: @endValue;
+}
+
 .adaptiveValue(@property, @startValue, @endValue, @minWidth, @maxWidth) {
-    @slope: (@endValue - @startValue) / (@maxWidth - @minWidth);
-    @yIntercept: @startValue - (@slope * @minWidth);
-
-    @propertyValue: ~"clamp(@{startValue}px, @{yIntercept}px + @{slope} * 100vw, @{endValue}px)";
-
-    @supports (@{property}: @propertyValue) {
-        @{property}: @propertyValue;
-    }
-
-    @supports not (@{property}: @propertyValue) {
-        @calcValue: ~"calc(@{startValue}px + (@{endValue - @startValue}) * ((100vw - @{minWidth}px) / (@{maxWidth - @minWidth})))";
-        @{property}: @calcValue;
-    }
+    @{property}: ~"calc(@{startValue}px + (@{endValue} - @{startValue}) * ((100vw - @{minWidth}px) / (@{maxWidth} - @{minWidth})))";
 }
