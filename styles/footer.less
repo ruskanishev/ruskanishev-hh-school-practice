@@ -1,1 +1,98 @@
-// Затычяка для Parcel
+.footer {
+    background-color: #212121;
+    
+    &__container {
+        padding-top: 30px;
+        padding-bottom: 22px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 15px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #999999;
+        }
+    }
+
+    &__network {
+        margin-bottom: 30px;
+
+        img {
+            margin-right: 15px;
+        }
+
+        img:last-child{
+            margin-right: 0px;
+        }
+    }
+
+    &__apps {
+        margin-bottom: 30px;
+    }
+
+    &__logo {
+        display: none;
+    }
+
+    &__info, &__stats{
+        color: #999999;
+    }
+
+    @media (min-width:@tablet){
+        .footer {
+
+            &__container {
+                padding-top: 35px;
+                padding-bottom: 30px;
+            }
+
+            &__top {
+                justify-content: space-between;
+                flex-direction: row;
+                position: relative;
+                margin-bottom: 30px;
+        
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background-color: #999999;
+                }
+            }
+            &__info {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    @media (min-width:@desktop){
+        .footer {
+
+            &__container {
+                padding-top: 45px;
+                padding-bottom: 35px;
+            }
+
+            &__logo {
+                display: block;
+                flex: 0 0 48px;
+                aspect-ratio: 1;
+            }
+        }
+    }
+}
