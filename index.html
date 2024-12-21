@@ -17,10 +17,10 @@
                     <div class= "header-top__container">
                         <a href="#" class="header-top__location">Москва</a>
                         <ul class="header-top__info">
-                            <a href="#" class="header-top__link">Оплата</a>
-                            <a href="#" class="header-top__link">Доставка</a>
-                            <a href="#" class="header-top__link">Самовывоз</a>
-                            <a href="#" class="header-top__link">Контактная информация</a>
+                            <li class="header-top__item"><a href="#" class="header-top__link">Оплата</a></li>
+                            <li class="header-top__item"><a href="#" class="header-top__link">Доставка</a></li>
+                            <li class="header-top__item"><a href="#" class="header-top__link">Самовывоз</a></li>
+                            <li class="header-top__item"><a href="#" class="header-top__link">Контактная информация</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,10 +28,10 @@
                     <img class="header__logo" src="/images/header/logo.svg" alt="Логотип">
                     <nav class="header__navigation">
                         <ul class="header__list">
-                            <a href="#" class="header__link">Одежда</a>
-                            <a href="#" class="header__link">Сумки</a>
-                            <a href="#" class="header__link">Аксессуары</a>
-                            <a href="#" class="header__link">Офисные принадлежности</a>
+                            <li class="header__item"><a href="#" class="header__link">Одежда</a></li>
+                            <li class="header__item"><a href="#" class="header__link">Сумки</a></li>
+                            <li class="header__item"><a href="#" class="header__link">Аксессуары</a></li>
+                            <li class="header__item"><a href="#" class="header__link">Офисные принадлежности</a></li>
                         </ul>
                     </nav>
                     <div class="header__controls">
@@ -44,10 +44,54 @@
             </header>
         
             <main class="main">
-                <div class="main__container">
-                    
-                </div>
+                <section class="promo" aria-labelledby="promo-title">
+                    <div class="promo__cotainer">
+                        <div class="promo__about">
+                            <h1 id="promo-title" class="promo__title h1">Мужская и женская одежда с символикой HeadHunter</h1>
+                            <a href="#" class="promo__link text">Перейти в каталог</a>
+                        </div>
+                        <div class="promo__slider-conteiner">
+                            <input type="radio" id="slide1" name="slider" checked>
+                            <input type="radio" id="slide2" name="slider">
+                            <input type="radio" id="slide3" name="slider">
+                            <input type="radio" id="slide4" name="slider">
+                            <div class="promo__slider-body">
+                                <picture class="promo__slide">
+                                    <source srcset="/images/main/promo/promo__mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__tablet.webp" media="(min-width: 950px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__desktop.webp" type="image/webp">
+                                    <img src="/images/main/promo/promo__noWebp.png" alt="Описание изображения">
+                                </picture>
+                                <picture class="promo__slide">
+                                    <source srcset="/images/main/promo/promo__mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__tablet.webp" media="(min-width: 950px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__desktop.webp" type="image/webp">
+                                    <img src="/images/main/promo/promo__noWebp.png" alt="Описание изображения">
+                                </picture>
+                                <picture class="promo__slide">
+                                    <source srcset="/images/main/promo/promo__mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__tablet.webp" media="(min-width: 950px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__desktop.webp" type="image/webp">
+                                    <img src="/images/main/promo/promo__noWebp.png" alt="Описание изображения">
+                                </picture>
+                                <picture class="promo__slide">
+                                    <source srcset="/images/main/promo/promo__mobile.webp" media="(max-width: 768px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__tablet.webp" media="(min-width: 950px)" type="image/webp">
+                                    <source srcset="/images/main/promo/promo__desktop.webp" type="image/webp">
+                                    <img src="/images/main/promo/promo__noWebp.png" alt="Описание изображения">
+                                </picture>
+                            </div>
+                            <div class="promo__dots">
+                                <label for="slide1" class="promo__dot"></label>
+                                <label for="slide2" class="promo__dot"></label>
+                                <label for="slide3" class="promo__dot"></label>
+                                <label for="slide4" class="promo__dot"></label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
+            
         
             <footer class="footer">
                 <div class="footer__container">

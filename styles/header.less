@@ -58,19 +58,23 @@
                 flex: 1 1 auto;
                 justify-content: flex-end;
             }
-    
+
+            &__item {
+                margin-right: 20px;
+            }
+
+            &__item:last-child{
+                margin-right: 0px;
+            }
+
             &__link {
                 font-family: Arial;
                 font-size: 14px;
                 line-height: 16px;
-                margin-right: 20px;
                 color: #609FCF;
             }
-
-            &__link:last-child{
-                margin-right: 0px;
-            }
         }
+
         .header {
         
             &__navigation {
@@ -87,22 +91,29 @@
                 font-family: Arial;
                 font-size: 14px;
                 line-height: 16px;
-                margin-right: 20px;
                 color: #fff;
             }
-    
-            &__link:last-child{
+
+            &__item {
+                margin-right: 20px;
+            }
+
+            &__item:last-child{
                 margin-right: 0px;
             }
+
             &__menu {
                 display: none;
             }
+
             &__auth-icon {
                 display: none;
             }
+
             &__controls {
                 margin-right: 0px;
             }
+
             &__auth {
                 display: inline-flex;
                 align-items: center;
@@ -118,9 +129,9 @@
                 background-color: #212122;
                 opacity: 0.5;
             }
+        }
     }
-    
-    }
+
     @media (min-width:@desktop){
         .header {
 
@@ -128,14 +139,17 @@
                 height: 80px;
             }
 
-            &__link {
+            &__item {
                 margin-right: 30px;
+            }
+
+            &__item:last-child{
+                margin-right: 0px;
             }
 
             &__logo {
                 flex: 0 0 50px;
             }
         }
-        
     }
 }

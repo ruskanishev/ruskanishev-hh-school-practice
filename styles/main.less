@@ -1,1 +1,144 @@
-// Затычяка для Parcel
+.promo {
+    background-color: #F9F9F9;
+    padding: 30px 0px;
+
+    &__cotainer {
+        display: flex;
+        flex-direction: column;
+        max-width: 950px;
+        padding: 0px 15px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__about {
+        order: 2;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__link {
+        display: inline-flex;
+        color: #FFFFFF;
+        background-color: #0F8FEE;
+        padding: 9px 15px;
+    }
+
+    &__slider-conteiner {
+        display: flex;
+        flex-direction: column;
+        order: 1;
+        transition: all 0.8s ease;
+        overflow: hidden;
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        #slide1:checked ~ .promo__slider-body {
+            transform: translateX(0);
+        }
+
+        #slide2:checked ~ .promo__slider-body {
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked ~ .promo__slider-body {
+            transform: translateX(-200%);
+        }
+
+        #slide4:checked ~ .promo__slider-body {
+            transform: translateX(-300%);
+        }
+    }
+
+    &__slider-body {
+        display: flex;
+        flex: 0 0 100%;
+        height: 100%;
+        transition: all 0.8s ease;
+        margin-bottom: 15px;
+    }
+
+    &__slide {
+        flex: 0 0 100%;
+        display: flex;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        margin-bottom: 15px;
+    }
+
+    &__dot {
+        flex: 0 0 8px;
+        aspect-ratio: 1;
+        background-color: #DFDEDD;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.8s ease;
+    }
+
+    #slide1:checked ~ .promo__dots label:nth-child(1),
+    #slide2:checked ~ .promo__dots label:nth-child(2),
+    #slide3:checked ~ .promo__dots label:nth-child(3),
+    #slide4:checked ~ .promo__dots label:nth-child(4) {
+        background-color: #212122;
+    }
+
+    @media (min-width:@tablet){
+        .promo {
+            padding: 60px 0px;
+
+            &__cotainer {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            &__about {
+                order: 1;
+                flex: 0 0 calc(50% - 15px);
+            }
+
+            &__slider-conteiner {
+                order: 2;
+                height: 100%;
+                flex: 0 0 calc(50% - 15px);
+            }
+
+            &__dots {
+                position: absolute;
+                bottom: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    @media (min-width:@desktop){
+        .promo {
+            &__about {
+                flex: 0 0 calc(50% - 30px);
+            }
+    
+            &__slider-conteiner {
+                flex: 0 0 calc(50% - 30px);
+            }
+        }
+    }
+}
+
