@@ -27,30 +27,52 @@
     }
 
     &__network {
+        display: flex;
         margin-bottom: 30px;
 
-        img {
+        a {
             margin-right: 15px;
         }
 
-        img:last-child{
+        a:last-child {
             margin-right: 0px;
+        }
+
+        img {
+            display: block;
         }
     }
 
     &__apps {
         margin-bottom: 30px;
+        display: flex;
+        
+        a {
+            margin-right: 8px;
+        }
+
+        a:last-child {
+            margin-right: 0px;
+        }
+
+        img {
+            display: block;
+        }
     }
 
     &__logo {
         display: none;
+
+        a {
+            display: block;
+        }
     }
 
-    &__info, &__stats{
+    &__info, &__stats {
         color: #999999;
     }
 
-    @media (min-width:@tablet){
+    @media (min-width:@tablet) {
         .footer {
 
             &__container {
@@ -80,7 +102,7 @@
         }
     }
 
-    @media (min-width:@desktop){
+    @media (min-width:@desktop) {
         .footer {
 
             &__container {
