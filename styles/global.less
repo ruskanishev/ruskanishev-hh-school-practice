@@ -8,13 +8,13 @@
 	flex-direction: column;
 	overflow: hidden;
 
-	> main {
-		flex: 1 1 auto;
-	}
     @supports (overflow: clip) {
 		overflow: clip;
 	}
+}
 
+main {
+	flex: 1 1 auto;
 }
 
 [class*="__container"]{
@@ -29,4 +29,9 @@
 	@media (min-width: @desktop){
 		padding: 0px 10px;
 	}
+}
+
+body {
+    font-family: Arial, sans-serif, serif;
+	color: #333;
 }
