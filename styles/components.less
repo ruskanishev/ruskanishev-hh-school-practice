@@ -1,0 +1,82 @@
+h1 , h2 , h3 , h4{
+    font-family: 'Roboto Condensed';
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    
+    @media (min-width:@tablet){
+        font-size: 36px;
+        line-height: 46px;
+    }
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    
+    @media (min-width:@tablet){
+        font-size: 30px;
+        line-height: 36px;
+    }
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    
+    @media (min-width:@tablet){
+        font-size: 22px;
+        line-height: 27px;
+    }
+}
+
+h4 {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    
+    @media (min-width:@tablet){
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+
+.text {
+    color: #333;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.text-large {
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.sale {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 30px;
+        aspect-ratio: 1;
+        background: url(/images/components/sale__mobile.svg) 0 0 / cover no-repeat;
+    }
+    @media (min-width: @tablet){
+        &::after {
+            width: 40px;
+            background: url(/images/components/sale__tablet-desktop.svg) 0 0 / cover no-repeat;
+        }
+    }
+}
